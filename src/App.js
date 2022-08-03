@@ -2,10 +2,10 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
- const location=
-   "http://localhost:9000/crawlable_catalogue/masked_rec/web/index.html";
+//  const location=
+//    "http://localhost:9000/crawlable_catalogue/masked_rec/web/index.html";
 
-//const location= window.location.href;
+const location= window.location.href;
 const url = location.split("web/index.html")[0];
 let ignore = false;
 
