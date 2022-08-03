@@ -2,12 +2,12 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-// const location=
-//   "http://localhost:9000/crawlable_catalogue/masked_rec/web/index.html";
+ const location=
+   "http://localhost:9000/crawlable_catalogue/masked_rec/web/index.html";
 
-const location= window.location.href;
+//const location= window.location.href;
 const url = location.split("web/index.html")[0];
-
+let ignore = false;
 
 function App() {
   const [data, setData] = useState({ links: [] });
@@ -15,7 +15,7 @@ function App() {
   //console.log(window.location.href);
 
   useEffect(() => {
-    let ignore = false;
+
 
     async function fetchData() {
       const result = await axios( url + "collection.json");
@@ -29,10 +29,24 @@ function App() {
     return () => { ignore = true; }
   });
 
+  function getBgColor(val){
+
+    console.log(ignore);
+
+    if (val < 0.25){
+        return "bg-success";
+      } else if (val < 0.5){
+        return "bg-danger";
+      } else if (val < 0.75){
+        return "bg-info";
+      } else return "bg-dark";
+
+  }
 
   return (
       <div className="container">
-        <div className="jumbotron bg-dark text-white">
+        {/* <div className= "jumbotron bg-dark text-white"> */}
+        <div className={`jumbotron ${getBgColor(Math.random())} text-white`}>
           <h1>{data.title}</h1>      
           <p>{data.description}.</p>
         </div>

@@ -1,4 +1,4 @@
-# Crawlable Viewer
+# Crawlable Collection
 
 Web interface for a crawlable deployment of OGC API Records.
 
@@ -35,4 +35,4 @@ If you want to deploy it on github pages, replace
 
   by:
   
-  `homepage": "https://doublebyte1.github.io/crawlable-viewer"`
+  `homepage": "https://doublebyte1.github.io/crawlable-collection"`
