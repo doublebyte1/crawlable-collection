@@ -73,7 +73,7 @@ function App() {
             <div className="card-body">
 
               <h5 className="card-title">{item.title}</h5>
-              <a href={item.href}  className="btn btn-primary">View Data</a>
+              <a href={`https://geojson.tools/?url=${item.href}`} className="btn btn-primary">View Data</a>
             </div>
           </div>
         </div>
